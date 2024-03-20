@@ -21,7 +21,7 @@ import { METERS_DATA_REPOSITORY } from '../../../libs/constants/repositories/rep
 import { CompanyEntity } from '../company/entities/company.entity';
 import { Make_Of_MeterEntity } from '../make_of_meter/entities/make_of_meter.entity';
 import { Make_Of_ServiceEntity } from '../make_of_service/entities/make_of_service.entity';
-import { MD_From_UsersEntity } from '@webapi/app/controllers/md_from_users/entities/md_from_users.entity';
+import { MD_From_UsersEntity } from '@webapi/app/modules/md_from_users/entities/md_from_users.entity';
 import { MeasureEntity } from '../measure/entities/measure.entity';
 import { Meters_DataEntity } from './entities/meters_data.entity';
 import { SN_Of_MeterEntity } from '../sn_of_meter/entities/sn_of_meter.entity';

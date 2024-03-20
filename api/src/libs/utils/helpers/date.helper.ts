@@ -1,4 +1,4 @@
-import { QueryPeriodDto } from '@webapi/app/controllers/balance/dtos/query-period.dto';
+import { QueryPeriodDto } from '@webapi/app/modules/balance/query-period.dto';
 import { IPeriod } from '@webapi/libs/interfaces';
 
 export function addOneMonth({ month, year }: { month: number; year: number }): {

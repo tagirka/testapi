@@ -13,7 +13,7 @@ import {
 import { ApiProperty } from '@nestjs/swagger';
 
 import { AccountEntity } from '../../account/entities/account.entity';
-import { BasketItemsEntity } from '@webapi/app/controllers/acquiring/entities/basket_items.entity';
+import { BasketItemsEntity } from '@webapi/app/modules/acquiring/entities/basket_items.entity';
 import { ElsEntity } from '../../els/entities/els.entity';
 import { CompanyEntity } from '../../company/entities/company.entity';
 import { MeasureEntity } from '../../measure/entities/measure.entity';

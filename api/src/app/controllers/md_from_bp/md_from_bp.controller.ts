@@ -9,7 +9,7 @@ import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 
 import { ParseElsPipe } from 'src/libs/pipes/parse-els.pipe';
 
-import { MD_From_BPService } from './md_from_bp.service';
+import { MD_From_BPService } from '../../modules/md_from_bp/md_from_bp.service';
 import { InjectPinoLogger, PinoLogger } from 'nestjs-pino';
 
 @ApiTags('Показания счетчиков. Информация от клиентов.')

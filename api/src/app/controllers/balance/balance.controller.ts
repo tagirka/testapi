@@ -1,7 +1,7 @@
 import { Controller, Get, Query, UseGuards } from '@nestjs/common';
 import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 
-import { BalanceService } from './balance.service';
+import { BalanceService } from '../../modules/balance/balance.service';
 
 import { InjectPinoLogger, PinoLogger } from 'nestjs-pino';
 import { AccessTokenGuards } from '../auth/guards/access-token.guards';
@@ -9,7 +9,7 @@ import { IJwtPayload } from '@webapi/libs/interfaces';
 import { User } from '../auth/decorators/user.decorator';
 
 import { CurrentPeriodPipe } from '@webapi/libs/pipes/current-period.pipe';
-import { QueryPeriodDto } from './dtos/query-period.dto';
+import { QueryPeriodDto } from '../../modules/balance/query-period.dto';
 import { setPeriod } from '@webapi/libs/utils/helpers/date.helper';
 import { StatusGuard } from '@webapi/app/admin/profile/quards/status.quard';
 

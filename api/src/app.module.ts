@@ -9,11 +9,11 @@ import { AppService } from './app.service';
 import { DatabaseModule } from './app/database/database.module';
 
 import { AuthModule } from './app/controllers/auth/auth.module';
-import { AcquiringModule } from './app/controllers/acquiring/acquiring.module';
-import { BalanceModule } from './app/controllers/balance/balance.module';
+import { AcquiringModule } from './app/modules/acquiring/acquiring.module';
+import { BalanceModule } from './app/modules/balance/balance.module';
 import { Business_PaymentsModule } from './app/controllers/business_payments/business_payments.module';
-import { MD_From_BPModule } from './app/controllers/md_from_bp/md_from_bp.module';
-import { MD_From_UsersModule } from './app/controllers/md_from_users/md_from_users.module';
+import { MD_From_BPModule } from './app/modules/md_from_bp/md_from_bp.module';
+import { MD_From_UsersModule } from './app/modules/md_from_users/md_from_users.module';
 import { Meters_DataModule } from './app/modules/meters_data/meters_data.module';
 import { SmsModule } from './app/controllers/service/sms/sms.module';
 import { AdminModule } from './app/admin/admin.module';

@@ -8,7 +8,7 @@ import {
   IBasketItem,
   IOrderBundle,
   IJsonParams,
-} from '@webapi/app/controllers/acquiring/types/request.types';
+} from '@webapi/app/modules/acquiring/types/request.types';
 import { getUniqueArray } from '@webapi/libs/utils/helpers/array-options';
 
 import { ElsEntity } from '@webapi/app/modules/els/entities/els.entity';

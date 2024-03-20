@@ -1,15 +1,15 @@
 import { getDataBaseConfig } from './configs/database.config';
 
 import { AccountEntity } from '../modules/account/entities/account.entity';
-import { AcquiringEntity } from '@webapi/app/controllers/acquiring/entities/acquiring.entity';
-import { BankSessionsEntity } from '@webapi/app/controllers/acquiring/entities/bank_sessions.entity';
-import { BasketItemsEntity } from '@webapi/app/controllers/acquiring/entities/basket_items.entity';
-import { BasketEntity } from '@webapi/app/controllers/acquiring/entities/basket.entity';
+import { AcquiringEntity } from '@webapi/app/modules/acquiring/entities/acquiring.entity';
+import { BankSessionsEntity } from '@webapi/app/modules/acquiring/entities/bank_sessions.entity';
+import { BasketItemsEntity } from '@webapi/app/modules/acquiring/entities/basket_items.entity';
+import { BasketEntity } from '@webapi/app/modules/acquiring/entities/basket.entity';
 import { BuildEntity } from '../modules/els/entities/build.entity';
 import { CompanyEntity } from '../modules/company/entities/company.entity';
 import { ElsEntity } from '../modules/els/entities/els.entity';
-import { MD_From_BPEntity } from '../controllers/md_from_bp/entities/md_from_bp.entity';
-import { MD_From_UsersEntity } from '../controllers/md_from_users/entities/md_from_users.entity';
+import { MD_From_BPEntity } from '../modules/md_from_bp/entities/md_from_bp.entity';
+import { MD_From_UsersEntity } from '../modules/md_from_users/entities/md_from_users.entity';
 import { MeasureEntity } from '../modules/measure/entities/measure.entity';
 import { Meters_DataEntity } from '../modules/meters_data/entities/meters_data.entity';
 import { NamingEntity } from '../modules/els/entities/naming.entity';
