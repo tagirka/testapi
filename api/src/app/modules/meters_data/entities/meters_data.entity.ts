@@ -19,7 +19,7 @@ import { SN_Of_MeterEntity } from '../../sn_of_meter/entities/sn_of_meter.entity
 import { TariffEntity } from '../../tariff/entities/tariff.entity';
 import { Make_Of_MeterEntity } from '../../make_of_meter/entities/make_of_meter.entity';
 import { Make_Of_ServiceEntity } from '../../make_of_service/entities/make_of_service.entity';
-import { MD_From_UsersEntity } from '@webapi/app/controllers/md_from_users/entities/md_from_users.entity';
+import { MD_From_UsersEntity } from '@webapi/app/modules/md_from_users/entities/md_from_users.entity';
 
 export interface Imeters_dataCreationAttrs {
   fk_els_id: number;

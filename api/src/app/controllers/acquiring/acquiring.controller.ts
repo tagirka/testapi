@@ -13,11 +13,11 @@ import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 
 import { OperationRepository } from '@webapi/app/modules/operation/operation.repository';
 
-import { AcquiringCsvService } from './acquiring.csv.service';
-import { AcquiringService } from './acquiring.service';
-import { CreateCsvFileDto } from './dtos/create-csv-file.dto';
-import { StartSessionDto } from './dtos/start_session.dto';
-import { StatusSessionDto } from './dtos/status_session.dto';
+import { AcquiringCsvService } from '../../modules/acquiring/acquiring.csv.service';
+import { AcquiringService } from '../../modules/acquiring/acquiring.service';
+import { CreateCsvFileDto } from '../../modules/acquiring/dtos/create-csv-file.dto';
+import { StartSessionDto } from '../../modules/acquiring/dtos/start_session.dto';
+import { StatusSessionDto } from '../../modules/acquiring/dtos/status_session.dto';
 import { InjectPinoLogger, PinoLogger } from 'nestjs-pino';
 import { AccessTokenGuards } from '../auth/guards/access-token.guards';
 import { IJwtPayload } from '@webapi/libs/interfaces';

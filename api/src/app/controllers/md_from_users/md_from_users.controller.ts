@@ -10,11 +10,11 @@ import {
 
 import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 
-import { MD_From_UsersService } from './md_from_users.service';
+import { MD_From_UsersService } from '../../modules/md_from_users/md_from_users.service';
 
-import { CreateMD_Dto } from './dto/create-md.dto';
+import { CreateMD_Dto } from '../../modules/md_from_users/dto/create-md.dto';
 //import { GetLastMD_Dto } from './dto/get-last-md.dto';
-import { CreateCsvFileMD_Dto } from './dto/create-csv-file.dto';
+import { CreateCsvFileMD_Dto } from '../../modules/md_from_users/dto/create-csv-file.dto';
 import { InjectPinoLogger, PinoLogger } from 'nestjs-pino';
 
 @ApiTags('Показания счетчиков. Информация от пользователей.')

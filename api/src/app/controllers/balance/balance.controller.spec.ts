@@ -1,6 +1,6 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { BalanceController } from './balance.controller';
-import { BalanceModule } from './balance.module';
+import { BalanceModule } from '../../modules/balance/balance.module';
 import { ConfigModule } from '@nestjs/config';
 import { DatabaseModule } from '@webapi/app/database/database.module';
 import { INestApplication } from '@nestjs/common';

@@ -16,7 +16,7 @@ import { ApiProperty } from '@nestjs/swagger';
 import { AccountEntity } from '../../account/entities/account.entity';
 import { UserModel } from '@webapi/app/controllers/auth/user/models/user.model';
 import { BuildEntity } from '@webapi/app/modules/els/entities/build.entity';
-import { MD_From_UsersEntity } from '@webapi/app/controllers/md_from_users/entities/md_from_users.entity';
+import { MD_From_UsersEntity } from '@webapi/app/modules/md_from_users/entities/md_from_users.entity';
 import { Meters_DataEntity } from '../../meters_data/entities/meters_data.entity';
 import { OperationEntity } from '../../operation/entities/operation.entity';
 import { PaymentEntity } from '../../payment/entities/payment.entity';

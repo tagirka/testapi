@@ -25,7 +25,7 @@ export class AccountService {
     fk_els_id,
     billing_year,
     billing_month
-  ): Promise<any> {
+  ): Promise<any> /* Много где в коде встерил Promis`ы с any, думаю не плохо было бы типизировать, хотя возможно это излишне*/ { 
     return await this.accountRepository.findAll({
       attributes: ['id', 'personal_account'],
       where: { fk_els_id },
@@ -196,8 +196,12 @@ export class AccountService {
 
     for (const item of mainRows) {
       //resultFOC.push(
-      await this.accountRepository
-        .findOrCreate({
+      /* Немного поменял решение, убрал then
+          ощущение что так выглядит более читаемо.
+          Встретил решение с async+then почти во всём коде, неочень понимаю зачем их комбинировать
+      */  
+      try {  
+        const [row, created] = await this.accountRepository.findOrCreate({
           where: {
             [Op.and]: [
               { personal_account: item.lsnum },
@@ -207,24 +211,56 @@ export class AccountService {
           defaults: {
             personal_account: item.lsnum,
             fk_service_id: item['usl_service_id.id'],
-            fk_els_id: !item['usl_els_id.id'] ? null : item['usl_els_id.id'],
+            fk_els_id: !item['usl_els_id.id'] ? null : item['usl_els_id.id'], 
           },
-        })
-        .then(([row, created]) => ({
+        });
+        resultFOC.push({
           res: created
-            ? `Добавлен ЛС [${row.fk_els_id}].[${row.fk_service_id}].`
-            : `Найден ЛС [${row.fk_els_id}].[${row.fk_service_id}].`,
+            ? `Добавлен ЛС [${row.fk_els_id}].[${row.fk_service_id}].` /* Тоже часто встретил в коде тернарные операторы, они немного услажняют чтение кода */
+            : `Найден ЛС [${row.fk_els_id}].[${row.fk_service_id}].`,   
           err: null,
           status: true,
-        }))
-        .catch(() => {
+        });
+      } catch (error) {
+        //залогировать ошибку
+        {
           tfNotErr = false;
           return {
             res: null,
             err: `Ошибка записи в таблицу.`,
             status: false,
           };
-        });
+        }
+      }
+      // await this.accountRepository
+      //   .findOrCreate({
+      //     where: {
+      //       [Op.and]: [
+      //         { personal_account: item.lsnum },
+      //         { fk_service_id: item['usl_service_id.id'] },
+      //       ],
+      //     },
+      //     defaults: {
+      //       personal_account: item.lsnum,
+      //       fk_service_id: item['usl_service_id.id'],
+      //       fk_els_id: !item['usl_els_id.id'] ? null : item['usl_els_id.id'],
+      //     },
+      //   })
+      //   .then(([row, created]) => ({
+      //     res: created
+      //       ? `Добавлен ЛС [${row.fk_els_id}].[${row.fk_service_id}].`
+      //       : `Найден ЛС [${row.fk_els_id}].[${row.fk_service_id}].`,
+      //     err: null,
+      //     status: true,
+      //   }))
+      //   .catch(() => {
+      //     tfNotErr = false;
+      //     return {
+      //       res: null,
+      //       err: `Ошибка записи в таблицу.`,
+      //       status: false,
+      //     };
+      //   });
       //);
     }
     return {
